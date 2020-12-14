@@ -27,9 +27,11 @@
           </nav>
         </div>
         <div class="menu-btn">
-          <span class="bar1"></span>
-          <span class="bar2"></span>
-          <span class="bar3"></span>
+          <a>
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+          </a>
         </div>
         <!--menu-btn end-->
       </div>
