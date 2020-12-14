@@ -8,6 +8,9 @@
             <div class="blog-section p-0 posts-page">
               <div class="blog-posts">
                 <div v-if="isLoading">Loading....</div>
+                <div v-if="isOffline" class="text-center">
+                  <h3>Anda Sedang Offline</h3>
+                </div>
                 <BaseCard
                   v-else
                   v-for="item in dataBlog"
@@ -40,6 +43,7 @@ export default {
   data() {
     return {
       isLoading: true,
+      isOffline: false,
       dataBlog: [],
     };
   },
@@ -56,12 +60,15 @@ export default {
     //       "secret-key" : "$2b$10$c.prlR0rbYnG1km2GD0aSuqglF2aDwPF807vHI425GSmP1IWhMkBm"
     //     }
     getData() {
-      fetch("https://api.jsonbin.io/b/5fd6c643bef8b7699e594206")
+      fetch("https://api.npoint.io/c01566ca8f299f5fdf18")
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
           // console.log(data[0].Content);
           this.dataBlog = data;
+          this.isLoading = false;
+        }).catch(e=>{
+          this.isOffline = true;
           this.isLoading = false;
         });
     },
