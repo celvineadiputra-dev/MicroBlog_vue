@@ -2,17 +2,21 @@
   <section class="pager-section">
 			<div class="container">
 				<div class="pager-content text-center">
-					<h2>MickroBlog</h2>
-					<h3>Selamat Datang Lengkapi Hari Mu dengan Coding</h3>
-				</div><!--pager-content end-->
-				<h2 class="page-titlee">MickroBlog</h2>
+					<h2>{{title}}</h2>
+					<h3>{{subTitle}}</h3>
+				</div>
+				<h2 class="page-titlee">{{title}}</h2>
 			</div>
 		</section>
 </template>
 
 <script>
 export default {
-    name : "BaseHero"
+	name : "BaseHero",
+	props:{
+		"title" : String,
+		"subTitle" : String,
+	}
 }
 </script>
 

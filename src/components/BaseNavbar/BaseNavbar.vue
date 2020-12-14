@@ -19,9 +19,9 @@
           <nav>
             <ul>
               <li>
-                <router-link class="active" to="/" title="">Home</router-link>
+                <router-link v-bind:class="menu == 'Home' ? 'active' : ''" to="/" title="">Home</router-link>
               </li>
-              <li><router-link to="/about" title="">About</router-link></li>
+              <li><router-link v-bind:class="menu == 'About' ? 'active' : ''" to="/about" title="">About</router-link></li>
               <li><router-link to="/" title="">Contacts</router-link></li>
             </ul>
           </nav>
@@ -48,6 +48,9 @@ export default {
   components: {
     MobileNavbar,
   },
+  props: {
+    'menu' : String
+  }
 };
 </script>
 

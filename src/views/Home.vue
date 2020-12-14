@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <BaseHero />
+    <BaseNavbar menu="Home"/>
+    <BaseHero title="MickroBlog" subTitle="Selamat Datang Lengkapi Hari Mu dengan Coding"/>
     <section class="page-content text-left">
       <div class="container">
         <div class="row">
@@ -9,6 +10,7 @@
               <div class="blog-posts">
                 <div v-if="isLoading">Loading....</div>
                 <div v-if="isOffline" class="text-center">
+                  <img src="/img/svg/Astronaut.svg" alt="Astronaut" class="img-fluid astro" width="300">
                   <h3>Anda Sedang Offline</h3>
                 </div>
                 <BaseCard
@@ -36,6 +38,7 @@
 
 <script>
 // @ is an alias to /src
+import BaseNavbar from '@/components/BaseNavbar/BaseNavbar.vue';
 import BaseHero from "@/components/Hero/BaseHero";
 import BaseCard from "@/components/BaseCard/BaseCard";
 export default {
@@ -50,6 +53,7 @@ export default {
   components: {
     BaseHero,
     BaseCard,
+    BaseNavbar,
   },
   created() {
     this.getData();
@@ -75,3 +79,22 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss" scoped>
+.astro{
+  animation-name: TopDown;
+  animation-direction: alternate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes TopDown {
+  from{
+    transform: translateY(-20px);
+  }
+  to{
+    transform: translateY(100px);
+  }
+}
+</style>
