@@ -11,7 +11,7 @@
 					<nav>
 						<ul>
 							<li><router-link class="active" to="/" title="">Home</router-link></li>
-							<li><router-link to="/" title="">About</router-link></li>
+							<li><router-link to="/about" title="">About</router-link></li>
 							<li><router-link to="/" title="">Contacts</router-link></li>
 						</ul>
 					</nav>

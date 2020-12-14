@@ -5,7 +5,7 @@
         <router-link to="/" title="">Home</router-link>
       </li>
       <li>
-        <router-link to="/" title="">About</router-link>
+        <router-link to="/about" title="">About</router-link>
       </li>
       <li>
         <router-link to="/" title="">Contacts</router-link>
